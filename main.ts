@@ -51,8 +51,7 @@ radio.onReceivedValue(function (name, value) {
             // Play stuff here
             music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.OnceInBackground)
         } else {
-            music.startMelody(music.builtInMelody(Melodies.Punchline), MelodyOptions.OnceInBackground)
-            control.waitMicros(randint(0, 2000))
+            control.waitMicros(randint(0, 2000000))
             radio.sendValue("count", totalFlips)
             music.playTone(784, music.beat(BeatFraction.Sixteenth))
         }
