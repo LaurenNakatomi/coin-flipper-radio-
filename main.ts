@@ -1,5 +1,5 @@
 input.onButtonPressed(Button.A, function () {
-    basic.showString(" H- ")
+    basic.showString(" H ")
     basic.showNumber(totalHeads)
 })
 input.onGesture(Gesture.TiltLeft, function () {
@@ -10,11 +10,10 @@ input.onGesture(Gesture.TiltLeft, function () {
     )
 })
 input.onButtonPressed(Button.AB, function () {
-    basic.showString(" Total Flips: ")
     basic.showNumber(totalFlips)
 })
 input.onButtonPressed(Button.B, function () {
-    basic.showString(" T- ")
+    basic.showString(" T ")
     basic.showNumber(totalTails)
 })
 input.onGesture(Gesture.Shake, function () {
@@ -50,11 +49,12 @@ radio.onReceivedValue(function (name, value) {
             totalHeads = 0
             totalTails = 0
             // Play stuff here
-            music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
+            music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.OnceInBackground)
         } else {
-            music.startMelody(music.builtInMelody(Melodies.Punchline), MelodyOptions.Once)
+            music.startMelody(music.builtInMelody(Melodies.Punchline), MelodyOptions.OnceInBackground)
             control.waitMicros(randint(0, 2000))
             radio.sendValue("count", totalFlips)
+            music.playTone(784, music.beat(BeatFraction.Sixteenth))
         }
     }
 })
