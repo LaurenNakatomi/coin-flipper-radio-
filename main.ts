@@ -63,3 +63,4 @@ let totalTails = 0
 let totalFlips = 0
 let totalHeads = 0
 radio.setGroup(10)
+radio.setTransmitPower(7)
